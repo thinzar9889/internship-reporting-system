@@ -38,5 +38,10 @@ class Intern extends Model
         return $this->hasMany(Internship::class);
     }
 
+    public function application()
+    {
+        return $this->hasOne(Application::class);
+    }
+
 
 }
