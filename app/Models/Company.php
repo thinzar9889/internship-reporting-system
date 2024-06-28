@@ -15,4 +15,9 @@ class Company extends Model
         'website',
         'address'
     ];
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }
