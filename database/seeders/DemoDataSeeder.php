@@ -41,7 +41,7 @@ class DemoDataSeeder extends Seeder
             'email'  => 'intern@gmail.com',
             'password'  => '$2y$12$NdeaD1rnD4iW8dUq.ArUeuEc51XJKaBru.saBe7soUNES9vdZJ0rm', // password
             'university_id'  => $university->id,
-            'profile'  => null,
+            'profile'  => 'null',
             'phone'  => '0934664738',
             'roll_no'  => '123',
             'nrc_no'  => '12345',

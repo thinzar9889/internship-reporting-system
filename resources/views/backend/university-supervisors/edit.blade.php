@@ -7,9 +7,12 @@
                 <div class="row">
                     <div class="col-md-12 mt-3">
                         <!-- general form elements -->
-                        <div class="card card-primary">
+                        <div class="card card-light">
                             <div class="card-header">
                                 <h3 class="card-title">Edit University Supervisor</h3>
+                                <a href="{{ route('university-supervisors.index') }}">
+                                <button type="button" class="btn btn-outline-warning float-right">Back</button>
+                                </a>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -17,6 +20,8 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
+                                <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
                                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Enter Name" value="{{ old('name', $universitySupervisor->name) }}">
@@ -24,6 +29,8 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
                                         <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Enter Email" value="{{ old('email', $universitySupervisor->email) }}">
@@ -31,13 +38,19 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="password">Password</label>
+                                        <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
                                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Enter Password">
                                         @error('password')
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="phone">Phone <span class="text-danger">*</span></label>
                                         <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" id="phone" placeholder="Enter Phone" value="{{ old('phone', $universitySupervisor->phone) }}">
@@ -45,6 +58,10 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="position">Position <span class="text-danger">*</span></label>
                                         <input type="text" name="position" class="form-control @error('position') is-invalid @enderror" id="position" placeholder="Enter Position" value="{{ old('position', $universitySupervisor->position) }}">
@@ -52,6 +69,8 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="university_id">University <span class="text-danger">*</span></label>
                                         <select class="form-control @error('university_id') is-invalid @enderror" name="university_id" id="university_id">
@@ -64,15 +83,21 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="address">Address</label>
+                                        <label for="address">Address <span class="text-danger">*</span></label>
                                         <textarea class="form-control" name="address" id="address" rows="3">{{ old('address', $universitySupervisor->address) }}</textarea>
                                     </div>
+                                </div>
+                                </div>
                                 </div>
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </form>
                         </div>

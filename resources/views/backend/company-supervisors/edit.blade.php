@@ -7,9 +7,12 @@
                 <div class="row">
                     <div class="col-md-12 mt-3">
                         <!-- general form elements -->
-                        <div class="card card-primary">
+                        <div class="card card-light">
                             <div class="card-header">
                                 <h3 class="card-title">Edit Company Supervisor</h3>
+                                <a href="{{ route('company-supervisors.index') }}">
+                                <button type="button" class="btn btn-outline-warning float-right">Back</button>
+                                </a>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -17,6 +20,8 @@
                                 @csrf
                                 @method('PUT')
                                 <div class="card-body">
+                                <div class="row">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="name">Name <span class="text-danger">*</span></label>
                                         <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Enter Name" value="{{ old('name', $companySupervisor->name) }}">
@@ -24,6 +29,8 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
                                         <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Enter Email" value="{{ old('email', $companySupervisor->email) }}">
@@ -31,6 +38,10 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="password">Password</label>
                                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Enter Password">
@@ -38,6 +49,8 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="phone">Phone <span class="text-danger">*</span></label>
                                         <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" id="phone" placeholder="Enter Phone" value="{{ old('phone', $companySupervisor->phone) }}">
@@ -45,6 +58,10 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="position">Position <span class="text-danger">*</span></label>
                                         <input type="text" name="position" class="form-control @error('position') is-invalid @enderror" id="position" placeholder="Enter Position" value="{{ old('position', $companySupervisor->position) }}">
@@ -52,9 +69,11 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="company_id">Company <span class="text-danger">*</span></label>
-                                        <select class="form-control select-company @error('company_id') is-invalid @enderror" name="company_id" id="company_id">
+                                        <select class="form-control @error('company_id') is-invalid @enderror" name="company_id" id="company_id">
                                             <option value="">---</option>
                                             @foreach($companies as $company)
                                                 <option value="{{ $company->id }}" {{ $companySupervisor->company_id == $company->id ? 'selected' : '' }}>{{ $company->name }}</option>
@@ -64,6 +83,8 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="address">Address</label>
                                         <textarea class="form-control" name="address" id="address" rows="3">{{ old('address', $companySupervisor->address) }}</textarea>
@@ -72,7 +93,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </form>
                         </div>

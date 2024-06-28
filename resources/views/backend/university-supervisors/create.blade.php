@@ -75,7 +75,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="university_id">University <span class="text-danger">*</span></label>
-                                        <select class="form-control select-university @error('university_id') is-invalid @enderror" name="university_id" id="university_id">
+                                        <select class="form-control @error('university_id') is-invalid @enderror" name="university_id" id="university_id">
                                             <option value="">---</option>
                                             @foreach($universities as $university)
                                                 <option value="{{ $university->id }}">{{ $university->name }}</option>
@@ -90,7 +90,7 @@
                                 <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="address">Address</label>
+                                        <label for="address">Address <span class="text-danger">*</span></label>
                                         <textarea class="form-control" name="address" id="address" rows="3">{{ old('address') }}</textarea>
                                     </div>
                                 </div>

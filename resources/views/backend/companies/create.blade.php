@@ -41,12 +41,14 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label class="form-label" for="website">Website</label>
+                                            <label class="form-label" for="website">Website<span
+                                            class="text-danger">*</span></label>
                                             <input type="text" name="website" class="form-control" id="website"
                                                 placeholder="Enter Company Website" value="{{ old('website') }}">
                                         </div>
                                         <div class="form-group">
-                                            <label for="address">Address</label>
+                                            <label for="address">Address<span
+                                            class="text-danger">*</span></label>
                                             <textarea class="form-control" name="address" id="address" rows="3">{{ old('address') }}</textarea>
                                         </div>
                                     </div>

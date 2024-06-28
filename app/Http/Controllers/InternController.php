@@ -164,7 +164,7 @@ class InternController extends Controller
             ]);
 
             if ($request->hasFile('profile')) {
-                Storage::disk('public')->delete('employees/'.$intern->profile);
+                Storage::disk('public')->delete('interns/'.$intern->profile);
                 $profile = $request->file('profile');
                 $profileName = 'intern-profile-'.uniqid().'.'.$profile->getClientOriginalName();
                 Storage::disk('public')->put('interns/'.$profileName, file_get_contents($profile->getRealPath()));

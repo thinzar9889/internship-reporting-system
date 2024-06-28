@@ -7,9 +7,12 @@
                 <div class="row">
                     <div class="col-md-12 mt-3">
                         <!-- general form elements -->
-                        <div class="card card-primary">
+                        <div class="card card-light">
                             <div class="card-header">
                                 <h3 class="card-title">Edit Company</h3>
+                                <a href="{{ route('companies.index') }}">
+                                        <button type="button" class="btn btn-outline-warning float-right">Back</button>
+                                    </a>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
@@ -32,18 +35,20 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label" for="website">Website</label>
+                                        <label class="form-label" for="website">Website<span
+                                        class="text-danger">*</span></label>
                                         <input type="text" name="website" class="form-control" id="website" placeholder="Enter Website" value="{{ old('website', $company->website) }}">
                                     </div>
                                     <div class="form-group">
-                                        <label for="address">Address</label>
+                                        <label for="address">Address<span
+                                        class="text-danger">*</span></label>
                                         <textarea class="form-control" name="address" id="address" rows="3">{{ old('address', $company->address) }}</textarea>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </form>
                         </div>

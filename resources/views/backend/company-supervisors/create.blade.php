@@ -71,7 +71,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="company_id">Company <span class="text-danger">*</span></label>
-                                        <select class="form-control select-company @error('company_id') is-invalid @enderror" name="company_id" id="company_id">
+                                        <select class="form-control @error('company_id') is-invalid @enderror" name="company_id" id="company_id">
                                             <option value="">---</option>
                                             @foreach($companies as $company)
                                                 <option value="{{ $company->id }}">{{ $company->name }}</option>
@@ -83,7 +83,7 @@
                                     </div>
                                     </div></div>
                                     <div class="form-group">
-                                        <label for="address">Address</label>
+                                        <label for="address">Address<span class="text-danger">*</span></label>
                                         <textarea class="form-control" name="address" id="address" rows="3">{{ old('address') }}</textarea>
                                     </div>
                                 </div>

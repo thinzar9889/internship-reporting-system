@@ -7,6 +7,9 @@
                     <div class="card-header">
                         <div class="center text-muted">
                             <h4>Company Supervisors Details</h4>
+                            <a href="{{ route('company-supervisors.index') }}">
+                                <button type="button" class="btn btn-outline-warning float-right">Back</button>
+                                </a>
                         </div>
                     </div>
                     <div class="card-body">

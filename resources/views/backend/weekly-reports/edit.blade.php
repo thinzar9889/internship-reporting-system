@@ -10,13 +10,18 @@
                         <div class="card card-light">
                             <div class="card-header">
                                 <h3 class="card-title">Edit Report</h3>
+                                <a href="{{ route('weekly-reports.index') }}">
+                                <button type="button" class="btn btn-outline-warning float-right">Back</button>
+                                </a>
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
                             <form action="{{ route('weekly-reports.update', $weeklyReport->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
-                                <div class="card-body">
+                                <div class="card-body"> 
+                                <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label" for="week_no">Week No <span class="text-danger">*</span></label>
                                         <input type="number" name="week_no" class="form-control @error('week_no') is-invalid @enderror" id="week_no" placeholder="Enter Name" value="{{ old('week_no', $weeklyReport->week_no) }}">
@@ -24,6 +29,8 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                </div>
+                                    <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label" for="startDate">Start Date <span class="text-danger">*</span></label>
                                         <input type="text" name="start_date" class="form-control @error('start_date') is-invalid @enderror" id="startDate" value="{{ old('start_date', $weeklyReport->start_date) }}">
@@ -31,12 +38,16 @@
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                    </div>
+                                    <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label" for="endDate">End Date <span class="text-danger">*</span></label>
                                         <input type="text" name="end_date" class="form-control @error('end_date') is-invalid @enderror" id="endDate" value="{{ old('end_date', $weeklyReport->end_date) }}">
                                         @error('end_date')
                                         <span class="invalid-feedback">{{ $message }}</span>
                                         @enderror
+                                    </div>
+                                    </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-12">

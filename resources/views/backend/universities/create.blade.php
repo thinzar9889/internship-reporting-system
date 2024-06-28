@@ -47,7 +47,8 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label class="form-label" for="website">Website</label>
+                                                    <label class="form-label" for="website">Website <span
+                                                    class="text-danger">*</span></label>
                                                     <input type="text" name="website" class="form-control" id="website"
                                                         placeholder="Enter Website" value="{{ old('website') }}">
                                                 </div>
@@ -55,7 +56,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="address">Address</label>
+                                                <label for="address">Address <span
+                                                class="text-danger">*</span></label>
                                                 <textarea class="form-control" name="address" id="address" rows="2">{{ old('address') }}</textarea>
                                             </div>
                                         </div>

@@ -3,15 +3,14 @@
     <div class="wrapper">
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
+            <section class="content">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <h1>Intern Report</h1>
+                <div class="card">
+                <div class="card-header">Intern Report
+                            <a href="{{ route('intern-reports.index') }}">
+                            <button type="button" class="btn btn-outline-warning float-right">Back</button>
+                            </a>
                         </div>
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
             {{-- <div class="card">
                         <div class="card-body"> --}}
             <!-- Main content -->
@@ -146,14 +145,15 @@
     </div>
     </div>
     <!-- /.timeline -->
+
+          </div>
+          </div><!-- /.container-fluid -->
+         </section>
+      </div>
+</div>
+
+ </section>
+<!-- /.content -->
 </div>
 </div>
-
-    </section>
-    <!-- /.content -->
-    </div>
-
-
-
-    </div>
 @endsection

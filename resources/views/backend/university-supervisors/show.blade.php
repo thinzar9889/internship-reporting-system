@@ -1,14 +1,16 @@
 @extends('backend.layouts.app')
 @section('content')
-
 <div class="wrapper">
     <div class="content-wrapper">
         <section class="content">
             <div class="container-fluid">
                 <div class="card-header">
                     <div class="center">
-                        <h4>University Supervisors Details</h4>
-                    </div>
+                        <h4>University Supervisors Details  <a href="{{ route('university-supervisors.index') }}">
+                        <button type="button" class="btn btn-outline-warning float-right">Back</button>
+                        </a></h4>
+                      
+                    </div><hr>
                     <div class="card-body">
                 <div class="card-body">
                     <table class="table table-striped mb-1">
