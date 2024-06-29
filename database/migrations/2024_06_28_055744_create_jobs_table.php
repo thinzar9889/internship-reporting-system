@@ -19,6 +19,11 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->longText('requirements');
             $table->date('deadline');
+            $table->string('female');
+            $table->string('male');
+            $table->string('stipend');
+            $table->string('job_type');
+            $table->string('photo');
             $table->boolean('status')->comment('0 Inactive, 1 Active');
             $table->timestamps();
         });
